@@ -1,0 +1,14 @@
+= turbo_frame_tag "birds"
+  ul
+    li Sparrow
+    li Robin
+    - if @color == 'black'
+      li Crow
+      li Starling
+      li Boat-tailed Grackle
+    - if @color == 'red'
+      li Cardinal
+      li Scarlet Tanager
+    - if @color == 'blue'
+      li BlueJay
+      li Bluebird

@@ -1,0 +1,56 @@
+
+
+div data-controller="hello"
+  h1 Pages#home
+  p data-hello-target="notice" Find me in app/views/pages/home.html.slim
+  = link_to "About", "/about"
+  = link_to "Settings", "/settings"
+  br
+  br
+
+  input type="text" data-hello-target="name"
+  button data-action="click->hello#greet"
+    = "Greet"
+
+hr
+div data-controller="visibility"
+  button data-action="visibility#showTargets" Show all targets
+  button data-action="visibility#hideTargets" Hide all targets
+  button data-action="visibility#toggleTargets" Toggle element visibility
+
+  p data-visibility-target="hideable" Target One
+  p data-visibility-target="hideable" hidden="hidden" Target Two
+
+hr
+div data-controller="box" data-box-hovering-class="colored" data-box-hover-count-value="0"
+  h4 The box below should change color on mouse over
+  div#the-box data-box-target="box" data-action="mouseover->box#mouseOver mouseout->box#mouseOut"
+  p data-box-target="countElem"
+
+hr
+div data-controller="hover" data-hover-hovering-class="popped"
+  h4 The box below should get a shadow on mouse over
+  div.shadow-box data-hover-target="hoverable" data-action="mouseover->hover#mouseOver mouseout->hover#mouseOut"
+
+div data-controller="hover" data-hover-hovering-class="popped"
+  div.shadow-box data-hover-target="hoverable" data-action="mouseover->hover#mouseOver mouseout->hover#mouseOut"
+
+div data-controller="hover" data-hover-hovering-class="popped"
+  div.shadow-box data-hover-target="hoverable" data-action="mouseover->hover#mouseOver mouseout->hover#mouseOut"
+
+
+
+/ div data-controller="dropdown" class="relative"
+  button type="button" data-action="dropdown#toggle click@window->dropdown#hide" Options
+
+  / div |
+    data-dropdown-target="menu" |
+    class="hidden transition transform origin-top-right absolute right-0" |
+    data-transition-enter-from="opacity-0 scale-95" |
+    data-transition-enter-to="opacity-100 scale-100" |
+    data-transition-leave-from="opacity-100 scale-100" |
+    data-transition-leave-to="opacity-0 scale-95"
+
+    / a href="#" data-action="dropdown#toggle" Account settings
+    / a href="#" data-action="dropdown#toggle" Support
+    / a href="#" data-action="dropdown#toggle" License

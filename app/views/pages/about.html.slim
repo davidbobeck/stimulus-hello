@@ -1,0 +1,22 @@
+h1 Pages#about
+p Find me in app/views/pages/about.html.slim
+= link_to "Home", "/home"
+= link_to "Settings", "/settings"
+
+hr
+= turbo_frame_tag "birds", src: "/birds?color=blue"
+  p ... Loading blue birds from the server ...
+
+hr
+= turbo_frame_tag "birds", src: "/birds?color=red"
+  p ... Loading red birds from the server ...
+
+hr
+= turbo_frame_tag "birds", src: "/birds?color=black"
+  p ... Loading black birds from the server ...
+
+hr
+/ = turbo_frame_tag "bird-of-the-day" do
+/   h4 Bird of the day placeholder
+/   = link_to "Show me the bird of the day", "/bird"
+= render partial: "about/bird_placeholder"

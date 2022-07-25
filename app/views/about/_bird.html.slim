@@ -1,0 +1,10 @@
+= turbo_frame_tag "bird-of-the-day" do
+  div
+    h4 Bird of the day partial
+    p = time
+
+  // This link will re-render the placeholder partial, which
+  // contains a turbo_frame with the same id as here. So, the
+  // content shown above (h4 and p with time) will be replaced
+  // by the content found in the placeholder partial.
+  = link_to "Cancel", "/bird_placeholder"

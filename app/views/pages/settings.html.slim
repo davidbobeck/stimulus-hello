@@ -1,0 +1,13 @@
+h1 Pages#settings
+p Find me in app/views/pages/settings.html.slim
+= link_to "Home", "/home"
+= link_to "About", "/about"
+
+hr
+div data-controller="checkboxes"
+  - @dogs.each do |dog|
+    = label_tag dog
+    = check_box_tag dog, "dogs[]", dog, data: {"checkboxes-target" => 'box'}
+
+  button data-action="checkboxes#checkAll" Check all
+  button data-action="checkboxes#clearAll" Clear all
